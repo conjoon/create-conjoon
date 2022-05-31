@@ -34,12 +34,13 @@
   "homepage": "https://github.com/conjoon/create-conjoon",
   "dependencies": {
     "@conjoon/conjoon": "latest",
+    "@l8js/l8": "^0.7.2",
     "commander": "^9.3.0",
     "fs-extra": "^10.1.0",
     "prompts": "^2.4.2",
     "shelljs": "^0.8.5",
     "supports-color": "^9.2.2",
-    "@l8js/l8": "^0.7.2"
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "eslint": "^8.16.0",
