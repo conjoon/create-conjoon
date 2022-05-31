@@ -1,14 +1,15 @@
 {
   "name": "@conjoon/create-conjoon",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "A scaffolding utility to help you instantly set up a functional conjoon app.",
   "scripts": {
     "create-conjoon": "create-conjoon",
     "release": "standard-version",
     "release:patch": "standard-version --release-as patch && npm run postversion",
     "release:minor": "standard-version --release-as minor && npm run postversion",
-    "release:major": "standard-version --release-as major && npm run postversion"
+    "release:major": "standard-version --release-as major && npm run postversion",
+    "postversion": "git push && git push --tags"
   },
   "bin": "bin/index.js",
   "repository": {
