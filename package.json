@@ -1,5 +1,5 @@
 {
-  "name": "@conjoon/create-conjoon",
+  "name": "create-conjoon",
   "type": "module",
   "version": "0.0.6",
   "description": "A scaffolding utility to help you instantly set up a functional conjoon app.",
@@ -14,7 +14,7 @@
   "bin": "bin/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conjoon/create-conjoon.git"
+    "url": "git+https://github.com/ThorstenSuckow/create-conjoon.git"
   },
   "keywords": [
     "conjoon",
@@ -29,9 +29,9 @@
   "author": "Thorsten Suckow-Homberg <thorsten@suckow-homberg.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/conjoon/create-conjoon/issues"
+    "url": "https://github.com/ThorstenSuckow/create-conjoon/issues"
   },
-  "homepage": "https://github.com/conjoon/create-conjoon",
+  "homepage": "https://github.com/ThorstenSuckow/create-conjoon",
   "dependencies": {
     "@conjoon/conjoon": "latest",
     "@l8js/l8": "^0.7.2",
