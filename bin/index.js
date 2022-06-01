@@ -28,16 +28,29 @@
 
 import {program} from "commander";
 import path from "path";
+import fs from "fs-extra";
+import l8 from "@l8js/l8";
+import { fileURLToPath } from 'url';
+
+
+const
+    cwd = fileURLToPath(new URL('../', import.meta.url)),
+    pkg = await fs.readJSON(`${cwd}/package.json`),
+    v   = l8.unchain("version", pkg);
+
+const description = [
+    "-------------------------------------------------------",
+    `----       [@conjoon/create-conjoon@${v}]         ----`,
+    "----         Create conjoon apps easily            ----",
+    "-------------------------------------------------------"
+].join("\n");
+
+console.log(description);
 
 program
     .name("create-conjoon")
     .arguments("[name] [rootDir]")
-    .description([
-        "-------------------------------------------------------",
-        "----         [@conjoon/create-conjoon]             ----",
-        "----         Create conjoon apps easily            ----",
-        "-------------------------------------------------------"
-    ].join("\n"))
+    .description(description)
     .action((name, rootDir) =>
         import("../lib/index.js").then(({default: init}) =>
             init(path.resolve(rootDir ?? "."), name)
