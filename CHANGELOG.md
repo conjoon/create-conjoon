@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/conjoon/create-conjoon/compare/v0.0.9...v0.0.10) (2022-06-03)
+
+
+### Bug Fixes
+
+* wrong dest dir for base installation ([3844a3d](https://github.com/conjoon/create-conjoon/commit/3844a3d3185548c5c5045597d29f4705d0cda2a6))
+
 ### [0.0.9](https://github.com/conjoon/create-conjoon/compare/v0.0.8...v0.0.9) (2022-06-03)
 
 
