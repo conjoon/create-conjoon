@@ -56,6 +56,9 @@ const description = [
 
 logger.info(description);
 
+logger.info code=${'npm run build'};
+
+
 program
     .name("create-conjoon")
     .description(description)
