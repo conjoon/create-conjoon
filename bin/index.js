@@ -31,7 +31,7 @@ import path from "path";
 import fs from "fs-extra";
 import l8 from "@l8js/l8";
 import { fileURLToPath } from 'url';
-
+import logger from "@docusaurus/logger";
 
 const
     cwd        = fileURLToPath(new URL('../', import.meta.url)),
@@ -54,7 +54,7 @@ const description = [
     " ",
 ].join("\n");
 
-console.log(description);
+logger.info(description);
 
 program
     .name("create-conjoon")
