@@ -40,28 +40,21 @@ const
     name       = l8.unchain("name", pkg),
     isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
-const description = [
-    " ",
-    `               ~ create-conjoon@${v} ~`,
-    isExternal ?
+logger.info`
+                  ~ create-conjoon@${v} ~
+    ${isExternal ? 
     "                     (external)"
                :
-    "                     (internal)",
+    "                     (internal)"}
 
-    "           .* Create conjoon apps easily *.",
-    " ",
-    "                 https://conjoon.org ",
-    " ",
-].join("\n");
-
-logger.info(description);
-
-logger.info code=${'npm run build'};
+               .* Create conjoon apps easily *.
+    
+                     url=https://conjoon.org 
+`;
 
 
 program
     .name("create-conjoon")
-    .description(description)
     .action(() =>
         import("../lib/index.js").then(({default: init}) =>
             init(path.resolve("."), isExternal)
