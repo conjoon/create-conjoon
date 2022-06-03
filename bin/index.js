@@ -41,15 +41,15 @@ const
     isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
 logger.info`
-                  ~ create-conjoon@${v} ~
-    ${isExternal ? 
+                  ~ name=${`create-conjoon@${v}`} ~
+    subdue=${`${isExternal ? 
     "                     (external)"
                :
-    "                     (internal)"}
+    "                     (internal)"}`}
 
-               .* Create conjoon apps easily *.
+               .* Create name=${`conjoon`} apps easily *.
     
-                     url=https://conjoon.org 
+                     url=${`https://conjoon.org`} 
 `;
 
 
