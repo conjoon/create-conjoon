@@ -31,29 +31,33 @@ import path from "path";
 import fs from "fs-extra";
 import l8 from "@l8js/l8";
 import { fileURLToPath } from 'url';
-
+import logger from "@docusaurus/logger";
 
 const
-    cwd  = fileURLToPath(new URL('../', import.meta.url)),
-    pkg  = await fs.readJSON(`${cwd}/package.json`),
-    v    = l8.unchain("version", pkg),
-    name = l8.unchain("name", pkg);
+    cwd        = fileURLToPath(new URL('../', import.meta.url)),
+    pkg        = await fs.readJSON(`${cwd}/package.json`),
+    v          = l8.unchain("version", pkg),
+    name       = l8.unchain("name", pkg),
+    isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
-const description = [
-    "-------------------------------------------------------",
-    `----            create-conjoon@${v}              ----`,
-    "----         Create conjoon apps easily            ----",
-    "-------------------------------------------------------"
-].join("\n");
+logger.info`
+                  ~ create-conjoon@${v} ~
+    ${isExternal ?
+    "                     (external)"
+    :
+    "                     (internal)"}
 
-console.log(description);
+               .* Create conjoon apps easily *.
+    
+                     url=https://conjoon.org 
+`;
+
 
 program
     .name("create-conjoon")
-    .description(description)
     .action(() =>
         import("../lib/index.js").then(({default: init}) =>
-            init(path.resolve("."), name.indexOf("@conjoon") === -1 ? true : false)
+            init(path.resolve("."), isExternal)
         )
     );
 
