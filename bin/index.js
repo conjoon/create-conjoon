@@ -34,26 +34,34 @@ import { fileURLToPath } from 'url';
 
 
 const
-    cwd = fileURLToPath(new URL('../', import.meta.url)),
-    pkg = await fs.readJSON(`${cwd}/package.json`),
-    v   = l8.unchain("version", pkg);
+    cwd        = fileURLToPath(new URL('../', import.meta.url)),
+    pkg        = await fs.readJSON(`${cwd}/package.json`),
+    v          = l8.unchain("version", pkg),
+    name       = l8.unchain("name", pkg),
+    isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
 const description = [
-    "-------------------------------------------------------",
-    `----       [@conjoon/create-conjoon@${v}]         ----`,
-    "----         Create conjoon apps easily            ----",
-    "-------------------------------------------------------"
+    " ",
+    `               ~ create-conjoon@${v} ~`,
+    isExternal ?
+    "                     (external)"
+               :
+    "                     (internal)",
+
+    "           .* Create conjoon apps easily *.",
+    " ",
+    "                 https://conjoon.org ",
+    " ",
 ].join("\n");
 
 console.log(description);
 
 program
     .name("create-conjoon")
-    .arguments("[name] [rootDir]")
     .description(description)
-    .action((name, rootDir) =>
+    .action(() =>
         import("../lib/index.js").then(({default: init}) =>
-            init(path.resolve(rootDir ?? "."), name)
+            init(path.resolve("."), isExternal)
         )
     );
 
