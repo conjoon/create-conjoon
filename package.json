@@ -43,7 +43,6 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "change-package-name": "^1.0.5",
     "eslint": "^8.16.0",
     "standard-version": "^9.3.1"
   }
