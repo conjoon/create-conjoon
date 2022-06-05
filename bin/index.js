@@ -41,6 +41,7 @@ const
     name       = l8.unchain("name", pkg),
     isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
+// start
 console.log(boxen(logger.interpolate`                 __                    
   ___     ___     ___    /\\_\\     ___     ___     ___    
  /'___\\  / __\`\\ /' _ \`\\  \\/\\ \\   / __\`\\  / __\`\\ /' _ \`\\  
@@ -49,12 +50,13 @@ console.log(boxen(logger.interpolate`                 __
  \\/____/ \\/___/  \\/_/\\/_//\\ \\_\\ \\\\/___/  \\/___/  \\/_/\\/_/
                        Create name=${`conjoon`} apps    \\ \\____/ name=${`create-conjoon@${v}`}                      
                          easily     \\/___/  url=${`https://conjoon.org`}            
-`, { padding: 1,
+`, {
+    padding: 1,
     margin: 1,
     align: 'center',
     borderColor: 'yellow',
-    borderStyle: 'round',}));
-
+    borderStyle: 'round'
+}));
 
 program
     .name("create-conjoon")
