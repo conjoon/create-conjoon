@@ -33,7 +33,7 @@ import l8 from "@l8js/l8";
 import { fileURLToPath } from 'url';
 import logger from "@docusaurus/logger";
 import initializer from "../lib/init.js";
-
+import boxen from "boxen";
 const
     cwd        = fileURLToPath(new URL('../', import.meta.url)),
     pkg        = await fs.readJSON(`${cwd}/package.json`),
@@ -41,18 +41,19 @@ const
     name       = l8.unchain("name", pkg),
     isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
-logger.info`
-
-                          __                    
+console.log(boxen(logger.interpolate`                 __                    
   ___     ___     ___    /\\_\\     ___     ___     ___    
  /'___\\  / __\`\\ /' _ \`\\  \\/\\ \\   / __\`\\  / __\`\\ /' _ \`\\  
 /\\ \\__/ /\\ \\L\\ \\/\\ \\/\\ \\  \\ \\ \\ /\\ \\L\\ \\/\\ \\L\\ \\/\\ \\/\\ \\ 
 \\ \\____\\\\ \\____/\\ \\_\\ \\_\\ _\\ \\ \\\\ \\____/\\ \\____/\\ \\_\\ \\_\\
  \\/____/ \\/___/  \\/_/\\/_//\\ \\_\\ \\\\/___/  \\/___/  \\/_/\\/_/
-  Create name=${`conjoon`} apps    \\ \\____/ name=${`create-conjoon@${v}`} subdue=${`${isExternal ? "(npx)" : ""}`}                      
-               easily     \\/___/  url=${`https://conjoon.org`}             
-                                   
-`;
+                       Create name=${`conjoon`} apps    \\ \\____/ name=${`create-conjoon@${v}`}                      
+                         easily     \\/___/  url=${`https://conjoon.org`}            
+`, { padding: 1,
+    margin: 1,
+    align: 'center',
+    borderColor: 'yellow',
+    borderStyle: 'round',}));
 
 
 program
