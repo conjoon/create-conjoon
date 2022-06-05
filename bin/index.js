@@ -32,6 +32,7 @@ import fs from "fs-extra";
 import l8 from "@l8js/l8";
 import { fileURLToPath } from 'url';
 import logger from "@docusaurus/logger";
+import initializer from "../lib/init.js";
 
 const
     cwd        = fileURLToPath(new URL('../', import.meta.url)),
@@ -41,24 +42,23 @@ const
     isExternal = name.indexOf("@conjoon") === -1 ? true : false;
 
 logger.info`
-                  ~ name=${`create-conjoon@${v}`} ~
-    subdue=${`${isExternal ? 
-    "                     (external)"
-               :
-    "                     (internal)"}`}
 
-               .* Create name=${`conjoon`} apps easily *.
-    
-                     url=${`https://conjoon.org`} 
+                          __                    
+  ___     ___     ___    /\\_\\     ___     ___     ___    
+ /'___\\  / __\`\\ /' _ \`\\  \\/\\ \\   / __\`\\  / __\`\\ /' _ \`\\  
+/\\ \\__/ /\\ \\L\\ \\/\\ \\/\\ \\  \\ \\ \\ /\\ \\L\\ \\/\\ \\L\\ \\/\\ \\/\\ \\ 
+\\ \\____\\\\ \\____/\\ \\_\\ \\_\\ _\\ \\ \\\\ \\____/\\ \\____/\\ \\_\\ \\_\\
+ \\/____/ \\/___/  \\/_/\\/_//\\ \\_\\ \\\\/___/  \\/___/  \\/_/\\/_/
+  Create name=${`conjoon`} apps    \\ \\____/ name=${`create-conjoon@${v}`} subdue=${`${isExternal ? "(npx)" : ""}`}                      
+               easily     \\/___/  url=${`https://conjoon.org`}             
+                                   
 `;
 
 
 program
     .name("create-conjoon")
     .action(() =>
-        import("../lib/index.js").then(({default: init}) =>
-            init(path.resolve("."), isExternal)
-        )
+        initializer(path.resolve("."), isExternal)
     );
 
 program.parse(process.argv);
