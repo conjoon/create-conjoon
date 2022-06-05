@@ -2,7 +2,7 @@
 
 A scaffolding utility to help you instantly set up a functional **conjon** app.
 
-## Usage {#usage}
+## Usage
 
 ```bash
 npx create-conjoon@latest
