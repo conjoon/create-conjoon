@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/conjoon/create-conjoon/compare/v0.0.20...v0.0.21) (2022-06-06)
+
+
+### Features
+
+* add cli arguments name and targetDir ([a12c79f](https://github.com/conjoon/create-conjoon/commit/a12c79f23cba0cc438a0a2911085ea0826a6f52e))
+
 ### [0.0.20](https://github.com/conjoon/create-conjoon/compare/v0.0.19...v0.0.20) (2022-06-05)
 
 ### [0.0.19](https://github.com/conjoon/create-conjoon/compare/v0.0.18...v0.0.19) (2022-06-05)
