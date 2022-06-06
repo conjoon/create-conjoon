@@ -34,12 +34,26 @@ import { fileURLToPath } from 'url';
 import logger from "@docusaurus/logger";
 import initializer from "../lib/init.js";
 import boxen from "boxen";
+import semver from "semver";
+import {createRequire} from "module";
+
 const
     cwd        = fileURLToPath(new URL('../', import.meta.url)),
     pkg        = await fs.readJSON(`${cwd}/package.json`),
     v          = l8.unchain("version", pkg),
     name       = l8.unchain("name", pkg),
     isExternal = name.indexOf("@conjoon") === -1 ? true : false;
+
+
+const packageJson = createRequire(import.meta.url)('../package.json');
+const requiredVersion = packageJson.engines.node;
+
+if (!semver.satisfies(process.version, requiredVersion)) {
+    logger.error(":( Minimum Node.js version not met");
+    logger.info`You are using Node.js number=${process.version}. Requirement: Node.js number=${requiredVersion}.`;
+    logger.info`Tip: You can use name=${`nvm`} to maintain multiple versions of name=${`Node.js`} on your computer`;
+    process.exit(1);
+}
 
 // start
 console.log(boxen(logger.interpolate`                 __                    
@@ -60,14 +74,16 @@ console.log(boxen(logger.interpolate`                 __
 
 program
     .name("create-conjoon")
-    .action(() =>
-        initializer(path.resolve("."), isExternal)
-    );
+    .arguments("[name] [targetDir]")
+    .action(function(name, targetDir) {
+        initializer(targetDir, name, isExternal)
+    });
 
 program.parse(process.argv);
 
 if (!process.argv.slice(1).length) {
     program.outputHelp();
+    process.exit(0);
 }
 
 process.on("unhandledRejection", (err) => {
