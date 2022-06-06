@@ -27,7 +27,6 @@
 
 
 import {program} from "commander";
-import path from "path";
 import fs from "fs-extra";
 import l8 from "@l8js/l8";
 import { fileURLToPath } from 'url';
@@ -38,15 +37,13 @@ import semver from "semver";
 import {createRequire} from "module";
 
 const
-    cwd        = fileURLToPath(new URL('../', import.meta.url)),
-    pkg        = await fs.readJSON(`${cwd}/package.json`),
-    v          = l8.unchain("version", pkg),
-    name       = l8.unchain("name", pkg),
-    isExternal = name.indexOf("@conjoon") === -1 ? true : false;
-
-
-const packageJson = createRequire(import.meta.url)('../package.json');
-const requiredVersion = packageJson.engines.node;
+    cwd             = fileURLToPath(new URL('../', import.meta.url)),
+    pkg             = await fs.readJSON(`${cwd}/package.json`),
+    v               = l8.unchain("version", pkg),
+    name            = l8.unchain("name", pkg),
+    isExternal      = name.indexOf("@conjoon") === -1 ? true : false,
+    packageJson     = createRequire(import.meta.url)('../package.json'),
+    requiredVersion = packageJson.engines.node;
 
 if (!semver.satisfies(process.version, requiredVersion)) {
     logger.error(":( Minimum Node.js version not met");
