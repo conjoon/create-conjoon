@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/conjoon/create-conjoon/compare/v0.0.22...v0.0.23) (2022-07-14)
+
 ### [0.0.22](https://github.com/conjoon/create-conjoon/compare/v0.0.21...v0.0.22) (2022-06-06)
 
 
