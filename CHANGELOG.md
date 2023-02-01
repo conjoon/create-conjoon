@@ -2,13 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.1](https://github.com/conjoon/create-conjoon/compare/v0.1.0...v0.1.1) (2023-02-01)
-
-
-### Features
-
-* installer considers version of conjoon for subsequent installation steps ([0fb8800](https://github.com/conjoon/create-conjoon/commit/0fb88007035d572db91b1304cd0e161059857339)), closes [conjoon/conjoon#23](https://github.com/conjoon/conjoon/issues/23)
-* update create-conjoon to consider additional features of conjoon@1.0 and up ([1382818](https://github.com/conjoon/create-conjoon/commit/13828186f89e3377617c50166525d8819f89c336)), closes [conjoon/conjoon#23](https://github.com/conjoon/conjoon/issues/23)
+## [0.2.0](https://github.com/conjoon/create-conjoon/compare/v0.1.1...v0.2.0) (2023-02-01)
 
 ## [0.1.0](https://github.com/conjoon/create-conjoon/compare/v0.0.23...v0.1.0) (2022-11-14)
 
