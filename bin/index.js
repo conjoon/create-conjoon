@@ -29,7 +29,7 @@
 import {program} from "commander";
 import fs from "fs-extra";
 import l8 from "@l8js/l8";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 import logger from "@docusaurus/logger";
 import initializer from "../lib/init.js";
 import boxen from "boxen";
@@ -37,18 +37,18 @@ import semver from "semver";
 import {createRequire} from "module";
 
 const
-    cwd             = fileURLToPath(new URL('../', import.meta.url)),
-    pkg             = await fs.readJSON(`${cwd}/package.json`),
+    cwd             = fileURLToPath(new URL("../", import.meta.url)),
+    pkg             = fs.readJsonSync(`${cwd}/package.json`),
     v               = l8.unchain("version", pkg),
     name            = l8.unchain("name", pkg),
     isExternal      = name.indexOf("@conjoon") === -1 ? true : false,
-    packageJson     = createRequire(import.meta.url)('../package.json'),
+    packageJson     = createRequire(import.meta.url)("../package.json"),
     requiredVersion = packageJson.engines.node;
 
 if (!semver.satisfies(process.version, requiredVersion)) {
     logger.error(":( Minimum Node.js version not met");
     logger.info`You are using Node.js number=${process.version}. Requirement: Node.js number=${requiredVersion}.`;
-    logger.info`Tip: You can use name=${`nvm`} to maintain multiple versions of name=${`Node.js`} on your computer`;
+    logger.info`Tip: You can use name=${"nvm"} to maintain multiple versions of name=${"Node.js"} on your computer`;
     process.exit(1);
 }
 
@@ -59,21 +59,21 @@ console.log(boxen(logger.interpolate`                 __
 /\\ \\__/ /\\ \\L\\ \\/\\ \\/\\ \\  \\ \\ \\ /\\ \\L\\ \\/\\ \\L\\ \\/\\ \\/\\ \\ 
 \\ \\____\\\\ \\____/\\ \\_\\ \\_\\ _\\ \\ \\\\ \\____/\\ \\____/\\ \\_\\ \\_\\
  \\/____/ \\/___/  \\/_/\\/_//\\ \\_\\ \\\\/___/  \\/___/  \\/_/\\/_/
-                       Create name=${`conjoon`} apps    \\ \\____/ name=${`create-conjoon@${v}`}                      
-                         easily     \\/___/  url=${`https://conjoon.org`}            
+                       Create name=${"conjoon"} apps    \\ \\____/ name=${`create-conjoon@${v}`}                      
+                         easily     \\/___/  url=${"https://conjoon.org"}            
 `, {
     padding: 1,
     margin: 1,
-    align: 'center',
-    borderColor: 'yellow',
-    borderStyle: 'round'
+    align: "center",
+    borderColor: "yellow",
+    borderStyle: "round"
 }));
 
 program
     .name("create-conjoon")
     .arguments("[name] [targetDir]")
-    .action(function(name, targetDir) {
-        initializer(targetDir, name, isExternal)
+    .action(function (name, targetDir) {
+        initializer(targetDir, name, isExternal);
     });
 
 program.parse(process.argv);
