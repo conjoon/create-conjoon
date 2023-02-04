@@ -1,7 +1,7 @@
 {
   "name": "@conjoon/create-conjoon",
   "type": "module",
-  "version": "0.2.0",
+  "version": "1.0.0-0",
   "description": "A scaffolding utility to help you instantly set up a functional conjoon app.",
   "scripts": {
     "create-conjoon": "create-conjoon",

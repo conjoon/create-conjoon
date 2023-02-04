@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-0](https://github.com/conjoon/create-conjoon/compare/v0.2.0...v1.0.0-0) (2023-02-04)
+
+
+### Features
+
+* install tool allows for installing release bundles ([f348bfd](https://github.com/conjoon/create-conjoon/commit/f348bfd59976ca4eee32137b5ef765270d345d17)), closes [conjoon/create-conjoon#6](https://github.com/conjoon/create-conjoon/issues/6)
+
 ## [0.2.0](https://github.com/conjoon/create-conjoon/compare/v0.1.1...v0.2.0) (2023-02-01)
 
 
