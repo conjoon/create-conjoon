@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.1](https://github.com/conjoon/create-conjoon/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-05)
+
+
+### Bug Fixes
+
+* debug modus is enabled by default ([b372c66](https://github.com/conjoon/create-conjoon/commit/b372c66b5f97d0a89ca38362509c24a497b388da))
+
 ## [1.0.0-beta.0](https://github.com/conjoon/create-conjoon/compare/v0.2.0...v1.0.0-beta.0) (2023-02-04)
 
 
