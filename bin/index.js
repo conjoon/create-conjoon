@@ -59,8 +59,8 @@ console.log(boxen(logger.interpolate`                 __
 /\\ \\__/ /\\ \\L\\ \\/\\ \\/\\ \\  \\ \\ \\ /\\ \\L\\ \\/\\ \\L\\ \\/\\ \\/\\ \\ 
 \\ \\____\\\\ \\____/\\ \\_\\ \\_\\ _\\ \\ \\\\ \\____/\\ \\____/\\ \\_\\ \\_\\
  \\/____/ \\/___/  \\/_/\\/_//\\ \\_\\ \\\\/___/  \\/___/  \\/_/\\/_/
-                       Create name=${"conjoon"} apps    \\ \\____/ name=${`create-conjoon@${v}`}                      
-                         easily     \\/___/  url=${"https://conjoon.org"}            
+                          Create name=${"conjoon"} apps    \\ \\____/ name=${`create-conjoon@${v}`}                      
+                      easily     \\/___/  url=${"https://conjoon.org"}            
 `, {
     padding: 1,
     margin: 1,

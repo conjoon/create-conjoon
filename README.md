@@ -2,16 +2,16 @@
 
 A scaffolding utility to help you instantly set up a functional **conjoon** app.
 
+Run 
+
 ```bash
-npx create-conjoon@latest [name] [targetDir]
+npx create-conjoon@latest
 ```
 or
 ```bash
-npm init @conjoon/conjoon@latest [name] [targetDir]
+npm init @conjoon/conjoon@latest
 ```
 and follow the instructions on screen.
-
-If `name` and/or `targetDir` are omitted, a guided installation will be started.
 
 ## Usage
 
