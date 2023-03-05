@@ -71,9 +71,8 @@ console.log(boxen(logger.interpolate`                 __
 
 program
     .name("create-conjoon")
-    .arguments("[name] [targetDir]")
-    .action(function (name, targetDir) {
-        initializer(targetDir, name, isExternal);
+    .action(function () {
+        initializer(isExternal);
     });
 
 program.parse(process.argv);
