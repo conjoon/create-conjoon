@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.6](https://github.com/conjoon/create-conjoon/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-07)
+
+
+### Bug Fixes
+
+* versions for releases not properly read out on *nix ([c8497cb](https://github.com/conjoon/create-conjoon/commit/c8497cbd19d86ff9eba1dc25ca1293a4886176d6))
+
 ## [1.0.0-beta.5](https://github.com/conjoon/create-conjoon/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-05)
 
 ## [1.0.0-beta.4](https://github.com/conjoon/create-conjoon/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-04)
