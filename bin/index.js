@@ -3,7 +3,7 @@
 /**
  * conjoon
  * create-conjoon
- * Copyright (C) 2022 Thorsten Suckow-Homberg https://github.com/conjoon/create-conjoon
+ * Copyright (C) 2022-2023 Thorsten Suckow-Homberg https://github.com/conjoon/create-conjoon
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -29,7 +29,7 @@
 import {program} from "commander";
 import fs from "fs-extra";
 import l8 from "@l8js/l8";
-import { fileURLToPath } from "url";
+import {fileURLToPath} from "url";
 import logger from "@docusaurus/logger";
 import initializer from "../lib/init.js";
 import boxen from "boxen";
